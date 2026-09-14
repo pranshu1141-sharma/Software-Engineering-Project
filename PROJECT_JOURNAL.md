@@ -80,6 +80,10 @@ A **14-slide** PowerPoint presentation was exported from the project report. It 
 
 This file brings the concept, model experiments, dashboard, application, report and presentation into one project record. It does not change prior training or app logs and does not claim that new model training occurred today.
 
+### 14 September 2026 — shared Git repository prepared
+
+The Carelane project was imported into the team's [Software-Engineering-Project repository](https://github.com/pranshu1141-sharma/Software-Engineering-Project) on `main` as commit `1dba463` (159 project files). A [contribution guide](CONTRIBUTING.md) now describes branch, review and journal practices. Local virtual environments, downloaded model weights and datasets, databases, logs, experiment backups and temporary build output were excluded from the push. Contributors must run the documented setup and training steps to recreate local model artifacts; the checked-in metrics and report preserve the saved experiment evidence.
+
 ## Current status
 
 The local prototype demonstrates specialty guidance, fictional provider discovery, booking and a simulated patient queue. Saved ML metrics and software checks are available for documentation. The patient-facing features and model scores remain experimental. The current work has **not** established clinical safety, real provider integration, real hospital wait-time performance, production security, or a deployable signed Android app.
