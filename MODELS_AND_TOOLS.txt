@@ -1,0 +1,82 @@
+AI HEALTHCARE PROJECT - MODELS, TRAINING, TOOLS AND PACKAGES
+Prepared: 2026-09-06
+
+ACTUAL RUN STATUS
+Read TRAINING_JOURNAL.txt and reports/RUN_SUMMARY.txt for measured results.
+This file describes components; it does not claim that a pending run succeeded.
+
+MODEL                         TRAINING METHOD                     TOOL / PACKAGES
+Condition baseline            Word + character TF-IDF;            Python, scikit-learn,
+                              balanced Logistic Regression        numpy, pandas, joblib
+
+Specialty baseline            Same method; direct specialty       Python, scikit-learn,
+                              classification using proxy labels   numpy, pandas, joblib
+
+Specialty DistilBERT           Fine-tune pretrained weights,       PyTorch CUDA, transformers,
+                              AdamW, weighted cross entropy,      safetensors, numpy, pandas
+                              4 epochs, max 128 tokens,
+                              batch 8, accumulation 2
+
+Queue CatBoost                 Gradient-boosted trees, MAE loss,   CatBoost, numpy, pandas,
+                              chronological train/val/test       scikit-learn
+
+Queue baseline                Arithmetic from queue state         Python; no training
+
+DATA
+Text: gretelai/symptom_to_diagnosis on Hugging Face.
+1,065 English descriptions; 22 publisher condition labels.
+853 publisher training rows, 212 publisher test rows before cleaning.
+Publisher describes adaptation from Symptom2Disease using an LLM.
+Publisher declares Apache-2.0. Original card and revision are downloaded.
+This is a small educational benchmark, not clinically validated patient data.
+
+Specialty labels: config/specialty_mapping.json contains author-defined,
+UNREVIEWED mappings from condition names to 9 department labels. No claim of
+professional review. They are proxy labels for pipeline development.
+
+Queue: 90 days x 3 simulated departments x 45 arrivals = 12,150 records.
+Generated using a documented first-come-first-served simulator and seed 42.
+No real hospital records have been obtained. Simulation scores are not real-world scores.
+
+HARDWARE DETECTED
+NVIDIA GeForce RTX 4050 Laptop GPU, approximately 6 GB VRAM.
+Approximately 16 GB system RAM. Separate Python 3.12 environment.
+PyTorch 2.7.1 CUDA 12.6 build selected for this initial environment.
+Actual installed versions are captured in requirements-lock.txt and run metadata.
+
+TRAINING TIME
+Journal records actual time per run and per DistilBERT epoch.
+Downloads, package installation, data preparation and review are separate costs.
+Earlier estimates were planning ranges, not measurements for this dataset.
+
+DEVELOPMENT / VERIFICATION TOOLS
+FastAPI + uvicorn: local research API for saved models.
+pydantic: request validation (installed by FastAPI).
+pytest + httpx: input-validation, leakage and saved-model integration tests.
+Git: source tracking; no commits or publication performed automatically.
+PowerShell: repeatable local setup and execution scripts.
+huggingface-hub, accelerate: support libraries listed for installation; the initial training
+loop uses native PyTorch, and the downloader uses Python urllib.
+datasets: not required in the initial implementation; JSONL is read with pandas.
+
+MODEL DOWNLOADS
+distilbert/distilbert-base-uncased, Apache-2.0: model.safetensors, tokenizer,
+configuration, README and LICENSE. No remote custom code is executed.
+Logistic Regression and CatBoost are fitted locally, so there are no pretrained
+weights to download for those models.
+
+LATER APPLICATION STACK (PLANNED; NOT INSTALLED OR BUILT BY THIS MODEL TASK)
+Website: React, TypeScript, Vite, Tailwind CSS.
+Mobile application: React Native, Expo.
+Application API: Node.js, Express.
+Database: PostgreSQL, Prisma.
+Live updates: Socket.IO. Redis/BullMQ when background jobs require them.
+These connect to the same Python model service; no separate app/web models.
+
+REFERENCES
+https://huggingface.co/datasets/gretelai/symptom_to_diagnosis
+https://huggingface.co/distilbert/distilbert-base-uncased
+https://huggingface.co/docs/transformers/tasks/sequence_classification
+https://scikit-learn.org/stable/common_pitfalls.html
+https://catboost.ai/docs/en/concepts/python-reference_catboostregressor
+https://pytorch.org/get-started/previous-versions/

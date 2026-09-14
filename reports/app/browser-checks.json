@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "Home loads",
+    "Real trained model returns Dermatology",
+    "Doctor filter and slots",
+    "Booking survives reload",
+    "Check in",
+    "Queue advances from 3 to ready to complete",
+    "390px layout has no page overflow",
+    "Search empty state",
+    "Offline error"
+  ],
+  "browserErrors": []
+}

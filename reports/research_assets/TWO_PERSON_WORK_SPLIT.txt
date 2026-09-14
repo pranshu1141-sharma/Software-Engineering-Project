@@ -1,0 +1,76 @@
+TWO-PERSON WORK ALLOCATION
+Prepared: 2026-09-06
+
+Purpose: two distinct ownership areas with concrete evidence for each person.
+Person 1 and Person 2 are placeholders; the team can insert its names.
+These are assigned responsibilities, not invented records of past contributions.
+Initial scaffolding and runs were AI-assisted in this session. Each owner should
+inspect, reproduce, improve and explain their assigned work before claiming it.
+
+PERSON 1 - SYMPTOM NLP, DATA QUALITY AND SPECIALTY MODELS
+Owns:
+1. Document the public text dataset, source revision, license and limitations.
+2. Explain and maintain condition-name removal and duplicate/near-duplicate audit.
+3. Coordinate qualified review or replacement of the provisional specialty labels.
+4. Train and compare the condition baseline, specialty baseline and DistilBERT.
+5. Review mistakes, per-class results, imbalance and unseen symptom descriptions.
+6. Record run configurations, epoch logs, checkpoints and model cards.
+
+Files to own:
+  scripts/download_assets.py
+  config/specialty_mapping.json
+  healthcare_ml/prepare.py
+  healthcare_ml/train_baseline.py
+  healthcare_ml/train_transformer.py
+  reports/data_audit.json
+  reports/*baseline_metrics.json
+  reports/specialty_distilbert_metrics.json
+
+Evidence for presentation:
+  Dataset audit, reproducible training command, actual epoch log, validation
+  comparison, confusion matrix, and examples of incorrect predictions.
+
+Contribution statement to use ONLY AFTER PERSONALLY COMPLETING THE WORK:
+  "I prepared and audited the symptom dataset, reproduced and evaluated the
+  text classifiers, and analyzed specialty prediction errors. I documented
+  that the first specialty labels are unreviewed proxies."
+
+PERSON 2 - QUEUE PREDICTION, MODEL INTEGRATION AND VERIFICATION
+Owns:
+1. Explain and maintain the first-come-first-served queue simulator.
+2. Train CatBoost using only features known when a wait estimate is requested.
+3. Compare predicted wait errors with the simple arithmetic baseline.
+4. Replace synthetic queue sessions with approved operational records later.
+5. Connect saved models to FastAPI, define request/response formats, and test them.
+6. Verify input handling, held-out splits, saved-model reload and demo behavior.
+7. Lead future integration with booking, live queue, website and mobile clients.
+
+Files to own:
+  healthcare_ml/train_queue.py
+  healthcare_ml/api.py
+  healthcare_ml/predict.py
+  tests/test_pipeline.py
+  scripts/summarize.py
+  reports/queue_catboost_metrics.json
+  reports/queue_test_predictions.csv
+
+Evidence for presentation:
+  Simulator assumptions, chronological split, baseline comparison, API demo,
+  test output, and prediction examples with actual-versus-estimated minutes.
+
+Contribution statement to use ONLY AFTER PERSONALLY COMPLETING THE WORK:
+  "I implemented and verified queue prediction and model-service integration,
+  compared CatBoost with a simple baseline, and documented the limits of
+  evaluating waiting times on simulated sessions."
+
+SHARED RESPONSIBILITIES
+- Agree on supported specialties and clinically reviewed routing requirements.
+- Review each other's results and reproduce at least one run from the other area.
+- Keep a dated contribution log with names, tasks, commands and evidence.
+- Separate completed experiments from planned application features.
+- Do not present proxy-label accuracy as clinical accuracy, or simulated queue
+  results as real hospital improvements.
+
+CONTRIBUTION LOG TEMPLATE
+Date | Person | Task actually completed | File / run ID | Reviewer / evidence
+_____ | ______ | ______________________ | _____________ | ___________________

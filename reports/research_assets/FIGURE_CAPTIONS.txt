@@ -1,0 +1,25 @@
+FIGURE CAPTIONS AND REPORTING NOTES
+
+01_specialty_comparison: Validation and test macro-F1 for direct specialty
+classification using TF-IDF/Logistic Regression and fine-tuned DistilBERT.
+Labels are unreviewed condition-to-specialty proxies. Training n=673,
+validation n=168, test n=212. One seed (42); no repeated-run error bars.
+
+02_distilbert_training_curves: Weighted training loss and validation scores
+across 8 fine-tuning epochs. Epoch 8 had the best validation
+macro-F1 and was selected before evaluating the test set. A validation-loss
+curve is not shown because validation loss was not recorded.
+
+03_*_confusion_matrix: Counts of reference versus predicted labels on the
+held-out text test set (n=212). Condition and specialty are distinct targets.
+Specialty reference labels are proxies, not independent clinician decisions.
+
+04_queue_simulation_results: Actual versus predicted waiting time in held-out
+synthetic FCFS sessions, plus test MAE comparison. Test n=2,025 visits across
+45 department-day sessions. Observations within a session are dependent.
+The lower prediction error is NOT a reduction in patient waiting time.
+
+PNG exports are 300 dpi; SVG exports are vector graphics with editable text.
+CSV exports contain the values behind the tables and plots. LaTeX table values
+are fractions, not percentages. These are initial experimental results, not
+evidence of clinical readiness or results from a real hospital pilot.

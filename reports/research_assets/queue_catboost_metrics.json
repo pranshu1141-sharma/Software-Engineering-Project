@@ -1,0 +1,80 @@
+{
+  "model": "queue_catboost",
+  "status": "SIMULATION_ONLY",
+  "training_seconds": 18.910815700000967,
+  "split_rows": {
+    "train": 8100,
+    "validation": 2025,
+    "test": 2025
+  },
+  "features": [
+    "department",
+    "patients_ahead",
+    "active_doctors",
+    "busy_doctors",
+    "recent_mean_minutes",
+    "minute_of_session",
+    "day_of_week"
+  ],
+  "best_iteration": 252,
+  "validation_mae_minutes": 4.7946810421662684,
+  "validation_baseline_mae_minutes": 5.635903626604906,
+  "test_mae_minutes": 5.464050851197695,
+  "test_rmse_minutes": 8.908354690298802,
+  "test_baseline_mae_minutes": 6.378488624906201,
+  "feature_importance": {
+    "department": 1.5600907495289427,
+    "patients_ahead": 55.46868972264307,
+    "active_doctors": 22.502425758964502,
+    "busy_doctors": 7.388665321579571,
+    "recent_mean_minutes": 9.972219282981428,
+    "minute_of_session": 2.341074142340206,
+    "day_of_week": 0.766835021962298
+  },
+  "hyperparameters": {
+    "iterations": 500,
+    "learning_rate": 0.05,
+    "depth": 6,
+    "loss_function": "MAE",
+    "thread_count": 4,
+    "random_seed": 42,
+    "verbose": false,
+    "allow_writing_files": false
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.0",
+      "catboost": "1.2.10",
+      "torch": "2.7.1+cu126",
+      "transformers": "4.57.6",
+      "accelerate": "1.14.0",
+      "fastapi": "0.141.1",
+      "safetensors": "0.8.0"
+    },
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 592.82",
+    "seed": 42
+  },
+  "source_hashes": {
+    "healthcare_ml\\api.py": "40165688e30881df0b33bb9883acf76f85ba6926e88c2b3c4e3ce5804aaf1402",
+    "healthcare_ml\\common.py": "dd78dab04787464386d808e9e1be3bafd5b47a233bed1146fe407e32a5939b0a",
+    "healthcare_ml\\metrics.py": "98dc1af0825e6d20f0cc94d1de497e78bef498c6ddfc14de7a339f19783968e9",
+    "healthcare_ml\\predict.py": "d1271a3ad780321cbf882694dd5aa7bb5aacd333af7046e5c794431eefe00614",
+    "healthcare_ml\\prepare.py": "3184598d7e73e50c311fea57bf0fee09a11712c40829937240d88bc4a8fefd52",
+    "healthcare_ml\\train_baseline.py": "c372102f6aa8dfa6fb95a59c3e809623dab4b2116273bd974a028357186842eb",
+    "healthcare_ml\\train_queue.py": "0acf78b809e63b8f82caea66d0ad119cd7851ca69b0f4c4ff1e3b26a48c574da",
+    "healthcare_ml\\train_transformer.py": "14bf2c99949f971ff3b491d7dd6c8f734b79ff284ffb53159b336213ff1bfae1",
+    "healthcare_ml\\__init__.py": "ff998a21c6178c75af860e1d413770bd97c8830bc2abc35c79f3fb5cd2f7a70b",
+    "scripts\\build_report.py": "79e69a8a94806912b11bb184be09f270c9cd9d51214f12afd8bc575f0f903ebd",
+    "scripts\\download_assets.py": "74addb7c82ab13af8a1774ac5a85cbcce99dfd143a5b360ed8a69901e2964e1d",
+    "scripts\\download_cuda_wheel.py": "b9f0c28770697fb83944044589e8205a76c2f4742816dbe78168cff27a604479",
+    "scripts\\gpu_job.py": "69eb72a007ed82c17810b682ad51118230e07d637c65e942fe4e1ec8f78d4100",
+    "scripts\\plot_results.py": "ff32720518137edbd85156e95cd8346839c7c1a31029fe1588cf2bad5c6d2988",
+    "scripts\\summarize.py": "8f743bd404f80540af05dd1c9cc621c253946c2faef090c4da7f11640dac4563",
+    "config\\specialty_mapping.json": "0aeea39d1b38cf8012dddeb53f4d14514d4e47936a03cdc683dd497b074d56b7"
+  },
+  "limitations": "Learns this simulator. Does not prove real hospital accuracy or waiting-time reduction. No priority, breaks, emergencies, or cancellations modeled."
+}

@@ -1,0 +1,46 @@
+AI HEALTHCARE - ACTUAL TRAINING RESULTS
+
+All text results use the small public LLM-rewritten dataset.
+Specialty targets are unreviewed condition-derived proxies.
+Queue results are from a simulator, not hospital measurements.
+
+condition_baseline: COMPLETED
+Measured training/evaluation run duration: 5.97 seconds
+Test rows: 212
+Test accuracy: 94.34%
+Test macro-F1: 0.9430
+Test top-three accuracy: 99.53%
+Validation macro-F1: 0.9516
+Metrics: reports/condition_baseline_metrics.json
+Artifacts: models/condition_baseline/
+
+specialty_baseline: COMPLETED
+Measured training/evaluation run duration: 2.81 seconds
+Test rows: 212
+Test accuracy: 96.70%
+Test macro-F1: 0.9683
+Test top-three accuracy: 100.00%
+Validation macro-F1: 0.9674
+Metrics: reports/specialty_baseline_metrics.json
+Artifacts: models/specialty_baseline/
+
+specialty_distilbert: COMPLETED
+Measured training/evaluation run duration: 94.79 seconds
+Test rows: 212
+Test accuracy: 95.75%
+Test macro-F1: 0.9596
+Test top-three accuracy: 100.00%
+Validation macro-F1: 0.9768
+Metrics: reports/specialty_distilbert_metrics.json
+Artifacts: models/specialty_distilbert/
+
+queue_catboost: COMPLETED
+Measured training/evaluation run duration: 18.91 seconds
+Test rows: 2025
+CatBoost test MAE: 5.464 minutes
+Arithmetic baseline test MAE: 6.378 minutes
+Metrics: reports/queue_catboost_metrics.json
+Artifacts: models/queue_catboost/
+
+Best specialty experiment by validation macro-F1: specialty_distilbert
+API baseline remains the explicit default; both can be requested.

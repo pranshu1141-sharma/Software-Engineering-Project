@@ -1,0 +1,7 @@
+{
+  "tests_passed": 12,
+  "tests_deferred": 2,
+  "test_seconds": 4.78,
+  "dependency_check": "passed",
+  "log": "logs/cpu_tests.log"
+}

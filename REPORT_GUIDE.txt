@@ -1,0 +1,33 @@
+VIEW THE TRAINING REPORT
+
+Double-click OPEN_REPORT.bat in this folder. It starts a small local server
+and opens http://127.0.0.1:8766/dashboard/index.html in your browser.
+The report is available only on this computer; it has not been published online.
+
+You can also open reports\dashboard\index.html directly. It works offline.
+Keep the reports folder together so the download links remain available.
+
+PAGE SECTIONS
+Overview: comparison table, dataset split, specialty comparison, queue results.
+Training: actual loss curve, validation curve, hyperparameters and epoch table.
+Evaluation: choose a model, view confusion matrix, per-class scores and errors.
+Run logs: timestamped training events, original journal and GPU process log.
+Paper assets: download figures, tables, source evidence and methods notes.
+
+EXPORTS FOR DOCUMENTATION
+reports\healthcare_research_bundle.zip contains the portable report and assets.
+reports\research_assets contains 300-dpi PNGs, editable vector SVGs, CSV tables,
+a LaTeX classification table, suggested captions, methods/limitations, source
+snapshots, metric files, original logs and checksum/provenance information.
+Unzip the bundle, then open dashboard\index.html to browse it offline.
+Use PNGs for slides/screenshots and SVGs for manuscript figures where supported.
+
+REBUILD AFTER NEW EXPERIMENTS
+From this folder:
+  .\.venv\Scripts\python.exe scripts\build_report.py
+Then refresh the page. This reads saved results; it does not retrain models.
+
+SCOPE
+This is a snapshot of the initial completed experiments. The report makes no
+claim of clinical validation. Specialty labels are unreviewed proxies and
+queue data is simulated. Report these limitations in any paper or presentation.

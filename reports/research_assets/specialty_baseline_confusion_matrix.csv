@@ -1,0 +1,10 @@
+,Dermatology,Endocrinology,Gastroenterology,General Medicine,Neurology,Orthopedics,Pulmonology,Rheumatology,Vascular Surgery
+Dermatology,28,0,0,1,0,0,0,0,0
+Endocrinology,0,8,0,2,0,0,0,0,0
+Gastroenterology,0,0,19,1,0,0,0,0,0
+General Medicine,1,0,0,91,0,0,1,0,0
+Neurology,0,0,0,1,9,0,0,0,0
+Orthopedics,0,0,0,0,0,10,0,0,0
+Pulmonology,0,0,0,0,0,0,20,0,0
+Rheumatology,0,0,0,0,0,0,0,10,0
+Vascular Surgery,0,0,0,0,0,0,0,0,10

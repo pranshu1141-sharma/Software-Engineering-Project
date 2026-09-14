@@ -1,0 +1,28 @@
+{
+  "status": "UNREVIEWED_PROXY_LABELS_FOR_EDUCATIONAL_EXPERIMENT_ONLY",
+  "method": "Author-defined condition-to-department mapping, not patient-specific clinical routing. Needs qualified reviewer approval and contextual labels before clinical use.",
+  "mapping": {
+    "cervical spondylosis": "Orthopedics",
+    "impetigo": "Dermatology",
+    "urinary tract infection": "General Medicine",
+    "arthritis": "Rheumatology",
+    "dengue": "General Medicine",
+    "common cold": "General Medicine",
+    "drug reaction": "General Medicine",
+    "fungal infection": "Dermatology",
+    "malaria": "General Medicine",
+    "allergy": "General Medicine",
+    "bronchial asthma": "Pulmonology",
+    "varicose veins": "Vascular Surgery",
+    "migraine": "Neurology",
+    "hypertension": "General Medicine",
+    "gastroesophageal reflux disease": "Gastroenterology",
+    "pneumonia": "Pulmonology",
+    "psoriasis": "Dermatology",
+    "diabetes": "Endocrinology",
+    "jaundice": "General Medicine",
+    "chicken pox": "General Medicine",
+    "typhoid": "General Medicine",
+    "peptic ulcer disease": "Gastroenterology"
+  }
+}

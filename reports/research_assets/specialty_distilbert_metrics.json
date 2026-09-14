@@ -1,0 +1,488 @@
+{
+  "model": "specialty_distilbert",
+  "config": {
+    "epochs": 8,
+    "batch_size": 8,
+    "gradient_accumulation": 2,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_tokens": 128,
+    "optimizer": "AdamW",
+    "loss": "class-weighted cross entropy",
+    "device": "cuda",
+    "mixed_precision": true,
+    "selection": "highest validation macro-F1; final test evaluated once",
+    "pretrained_revision": "12040accade4e8a0f71eabdb258fecc2e7e948be"
+  },
+  "best_epoch": 8,
+  "training_seconds": 94.79489620000822,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 2.0607084469844823,
+      "validation_accuracy": 0.42857142857142855,
+      "validation_macro_f1": 0.4362687218050323,
+      "seconds": 6.781153299991274
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.3869964513169355,
+      "validation_accuracy": 0.6726190476190477,
+      "validation_macro_f1": 0.6849602639076323,
+      "seconds": 6.458000699989498
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7903259030777137,
+      "validation_accuracy": 0.8452380952380952,
+      "validation_macro_f1": 0.8604298027436907,
+      "seconds": 6.639180800004397
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.41039802149536,
+      "validation_accuracy": 0.9345238095238095,
+      "validation_macro_f1": 0.9366605858157317,
+      "seconds": 8.325856399998884
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.20086565175346952,
+      "validation_accuracy": 0.9464285714285714,
+      "validation_macro_f1": 0.9491003048335658,
+      "seconds": 7.213344000003417
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.09598913350395781,
+      "validation_accuracy": 0.9583333333333334,
+      "validation_macro_f1": 0.9376903770499381,
+      "seconds": 7.16892939999525
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.04614113636569495,
+      "validation_accuracy": 0.9702380952380952,
+      "validation_macro_f1": 0.9663268802987539,
+      "seconds": 6.759915100003127
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.02530576907552192,
+      "validation_accuracy": 0.9821428571428571,
+      "validation_macro_f1": 0.976756815466493,
+      "seconds": 6.806472299998859
+    }
+  ],
+  "validation": {
+    "accuracy": 0.9821428571428571,
+    "macro_f1": 0.976756815466493,
+    "top3_accuracy": 1.0,
+    "sample_size": 168,
+    "classification_report": {
+      "Dermatology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "Endocrinology": {
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1-score": 0.9333333333333333,
+        "support": 8.0
+      },
+      "Gastroenterology": {
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1-score": 0.967741935483871,
+        "support": 15.0
+      },
+      "General Medicine": {
+        "precision": 0.9743589743589743,
+        "recall": 0.987012987012987,
+        "f1-score": 0.9806451612903225,
+        "support": 77.0
+      },
+      "Neurology": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.9090909090909091,
+        "support": 6.0
+      },
+      "Orthopedics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      },
+      "Pulmonology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 15.0
+      },
+      "Rheumatology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 8.0
+      },
+      "Vascular Surgery": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 8.0
+      },
+      "accuracy": 0.9821428571428571,
+      "macro avg": {
+        "precision": 0.9902065527065527,
+        "recall": 0.9661495911495912,
+        "f1-score": 0.976756815466493,
+        "support": 168.0
+      },
+      "weighted avg": {
+        "precision": 0.9826675061050061,
+        "recall": 0.9821428571428571,
+        "f1-score": 0.9818274915049108,
+        "support": 168.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        24,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        76,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8
+      ]
+    ],
+    "label_order": [
+      "Dermatology",
+      "Endocrinology",
+      "Gastroenterology",
+      "General Medicine",
+      "Neurology",
+      "Orthopedics",
+      "Pulmonology",
+      "Rheumatology",
+      "Vascular Surgery"
+    ]
+  },
+  "test": {
+    "accuracy": 0.9575471698113207,
+    "macro_f1": 0.9596194261200802,
+    "top3_accuracy": 1.0,
+    "sample_size": 212,
+    "classification_report": {
+      "Dermatology": {
+        "precision": 0.9655172413793104,
+        "recall": 0.9655172413793104,
+        "f1-score": 0.9655172413793104,
+        "support": 29.0
+      },
+      "Endocrinology": {
+        "precision": 1.0,
+        "recall": 0.9,
+        "f1-score": 0.9473684210526315,
+        "support": 10.0
+      },
+      "Gastroenterology": {
+        "precision": 0.8695652173913043,
+        "recall": 1.0,
+        "f1-score": 0.9302325581395349,
+        "support": 20.0
+      },
+      "General Medicine": {
+        "precision": 0.9565217391304348,
+        "recall": 0.946236559139785,
+        "f1-score": 0.9513513513513514,
+        "support": 93.0
+      },
+      "Neurology": {
+        "precision": 0.8888888888888888,
+        "recall": 0.8,
+        "f1-score": 0.8421052631578947,
+        "support": 10.0
+      },
+      "Orthopedics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Pulmonology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 20.0
+      },
+      "Rheumatology": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Vascular Surgery": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 0.9575471698113207,
+      "macro avg": {
+        "precision": 0.9644992318655488,
+        "recall": 0.9568615333910105,
+        "f1-score": 0.9596194261200802,
+        "support": 212.0
+      },
+      "weighted avg": {
+        "precision": 0.9586637498860633,
+        "recall": 0.9575471698113207,
+        "f1-score": 0.9574295456630737,
+        "support": 212.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        28,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        9,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        3,
+        88,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "label_order": [
+      "Dermatology",
+      "Endocrinology",
+      "Gastroenterology",
+      "General Medicine",
+      "Neurology",
+      "Orthopedics",
+      "Pulmonology",
+      "Rheumatology",
+      "Vascular Surgery"
+    ]
+  },
+  "label_status": "UNREVIEWED condition-derived specialty proxies; not clinical routing ground truth",
+  "score_status": "Uncalibrated model scores",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.9.0",
+      "catboost": "1.2.10",
+      "torch": "2.7.1+cu126",
+      "transformers": "4.57.6",
+      "accelerate": "1.14.0",
+      "fastapi": "0.141.1",
+      "safetensors": "0.8.0"
+    },
+    "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU, 6141 MiB, 592.82",
+    "seed": 42
+  },
+  "source_hashes": {
+    "healthcare_ml\\api.py": "40165688e30881df0b33bb9883acf76f85ba6926e88c2b3c4e3ce5804aaf1402",
+    "healthcare_ml\\common.py": "dd78dab04787464386d808e9e1be3bafd5b47a233bed1146fe407e32a5939b0a",
+    "healthcare_ml\\metrics.py": "98dc1af0825e6d20f0cc94d1de497e78bef498c6ddfc14de7a339f19783968e9",
+    "healthcare_ml\\predict.py": "d1271a3ad780321cbf882694dd5aa7bb5aacd333af7046e5c794431eefe00614",
+    "healthcare_ml\\prepare.py": "3184598d7e73e50c311fea57bf0fee09a11712c40829937240d88bc4a8fefd52",
+    "healthcare_ml\\train_baseline.py": "c372102f6aa8dfa6fb95a59c3e809623dab4b2116273bd974a028357186842eb",
+    "healthcare_ml\\train_queue.py": "0acf78b809e63b8f82caea66d0ad119cd7851ca69b0f4c4ff1e3b26a48c574da",
+    "healthcare_ml\\train_transformer.py": "14bf2c99949f971ff3b491d7dd6c8f734b79ff284ffb53159b336213ff1bfae1",
+    "healthcare_ml\\__init__.py": "ff998a21c6178c75af860e1d413770bd97c8830bc2abc35c79f3fb5cd2f7a70b",
+    "scripts\\build_report.py": "79e69a8a94806912b11bb184be09f270c9cd9d51214f12afd8bc575f0f903ebd",
+    "scripts\\download_assets.py": "74addb7c82ab13af8a1774ac5a85cbcce99dfd143a5b360ed8a69901e2964e1d",
+    "scripts\\download_cuda_wheel.py": "b9f0c28770697fb83944044589e8205a76c2f4742816dbe78168cff27a604479",
+    "scripts\\gpu_job.py": "69eb72a007ed82c17810b682ad51118230e07d637c65e942fe4e1ec8f78d4100",
+    "scripts\\plot_results.py": "ff32720518137edbd85156e95cd8346839c7c1a31029fe1588cf2bad5c6d2988",
+    "scripts\\summarize.py": "8f743bd404f80540af05dd1c9cc621c253946c2faef090c4da7f11640dac4563",
+    "config\\specialty_mapping.json": "0aeea39d1b38cf8012dddeb53f4d14514d4e47936a03cdc683dd497b074d56b7"
+  }
+}

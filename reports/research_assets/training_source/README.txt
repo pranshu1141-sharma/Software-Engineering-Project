@@ -1,0 +1,1 @@
+Snapshot of current source. Original per-run hashes are recorded in the metric JSON files. Compare hashes before claiming an exact historical source match.

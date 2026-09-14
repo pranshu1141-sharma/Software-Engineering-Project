@@ -1,0 +1,3 @@
+model,test_mae_minutes,test_n
+arithmetic_baseline,6.378488624906201,2025
+catboost,5.464050851197695,2025

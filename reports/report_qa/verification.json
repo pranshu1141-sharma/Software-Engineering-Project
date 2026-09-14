@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "javascriptErrors": [],
+  "predictionErrorCounts": {
+    "specialty_baseline": 7,
+    "specialty_distilbert": 9,
+    "condition_baseline": 12
+  },
+  "checkedDownloadLinks": 48,
+  "checks": [
+    "All 5 sections",
+    "Saved numerical metrics",
+    "Latest epoch history and checkpoint caption",
+    "Model selector",
+    "Error/all prediction filter",
+    "CSV download",
+    "Original GPU log",
+    "Export file existence",
+    "390px mobile overflow"
+  ]
+}
